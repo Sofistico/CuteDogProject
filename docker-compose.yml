@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  CuteDogApi:
+    image: ${DOCKER_REGISTRY-}CuteDogApi
+    build:
+      context: .
+      dockerfile: CuteDogApi/Dockerfile
+  cutedogweb:
+    image: ${DOCKER_REGISTRY-}cutedogweb
+    build:
+      context: .
+      dockerfile: cutedogweb/Dockerfile
+    depends_on:
+      - CuteDogApi
