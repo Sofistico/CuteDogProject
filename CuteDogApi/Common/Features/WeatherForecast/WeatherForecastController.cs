@@ -1,8 +1,8 @@
+﻿using CuteDogApi.Common.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CuteDogApi.Controllers
+namespace CuteDogApi.Common.Features.WeatherForecast
 {
-    [ApiController]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
@@ -19,9 +19,9 @@ namespace CuteDogApi.Controllers
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
+        public IEnumerable<Weather> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            return Enumerable.Range(1, 5).Select(index => new Weather
             {
                 Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
                 TemperatureC = Random.Shared.Next(-20, 55),

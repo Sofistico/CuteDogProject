@@ -1,4 +1,6 @@
 FROM node:21-alpine
+EXPOSE 5173
+EXPOSE 5174
 
 WORKDIR /cutedogweb
 COPY package.json .

@@ -1,6 +1,6 @@
-namespace CuteDogApi
+﻿namespace CuteDogApi.Common.Models
 {
-    public class WeatherForecast
+    public class Weather
     {
         public DateOnly Date { get; set; }
 
